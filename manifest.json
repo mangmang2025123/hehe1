@@ -5,31 +5,14 @@
   "description": "Copies LLM responses to the clipboard automatically.",
   "permissions": [
     "storage",
-    "clipboardWrite"
+    "clipboardWrite",
+    "scripting",
+    "tabs"
   ],
   "action": {
     "default_popup": "settings.html"
   },
-  "content_scripts": [
-    {
-      "matches": [
-        "https://chatgpt.com/*",
-        "https://aistudio.google.com/*"
-      ],
-      "js": [
-        "content.js"
-      ]
-    }
-  ],
-  "web_accessible_resources": [
-    {
-      "resources": [
-        "chatgpt.js"
-      ],
-      "matches": [
-        "https://chatgpt.com/*",
-        "https://aistudio.google.com/*"
-      ]
-    }
-  ]
+  "background": {
+    "service_worker": "background.js"
+  }
 }

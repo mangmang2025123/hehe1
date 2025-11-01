@@ -5,16 +5,14 @@
     <style>
         body {
             font-family: sans-serif;
-            width: 250px;
+            width: 300px;
             padding: 10px;
         }
         label {
             display: block;
             margin-bottom: 5px;
         }
-        input {
-            width: 100%;
-            padding: 5px;
+        input[type="number"], input[type="checkbox"] {
             margin-bottom: 10px;
         }
         button {
@@ -28,6 +26,21 @@
         button:hover {
             background-color: #45a049;
         }
+        #tab-list {
+            list-style: none;
+            padding: 0;
+        }
+        #tab-list li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 5px;
+            border-bottom: 1px solid #eee;
+        }
+        #tab-list button {
+            width: auto;
+            padding: 5px 10px;
+        }
     </style>
 </head>
 <body>
@@ -37,6 +50,9 @@
     <label for="play-sound">Play sound on copy:</label>
     <input type="checkbox" id="play-sound" checked>
     <button id="save-button">Save</button>
+    <hr>
+    <h2>Active Tabs</h2>
+    <ul id="tab-list"></ul>
     <script src="settings.js"></script>
 </body>
 </html>
